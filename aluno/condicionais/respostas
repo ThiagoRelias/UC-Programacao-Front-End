@@ -1,0 +1,195 @@
+-- 1
+function maiorNumero(numero1, numero2, numero3) {
+    if (
+        typeof numero1 !== "number" ||
+        typeof numero2 !== "number" ||
+        typeof numero3 !== "number" ||
+        !Number.isFinite(numero1) ||
+        !Number.isFinite(numero2) ||
+        !Number.isFinite(numero3)
+    ) {
+        console.log("Todos os valores devem ser números.");
+        return;
+    }
+    let maior = numero1;
+
+    if (numero2 > maior) {
+        maior = numero2;
+    }
+
+    if (numero3 > maior) {
+        maior = numero3;
+    }
+    console.log("O maior número é:", maior);
+}
+maiorNumero(10, 25, 18);
+
+
+-- 2
+function concatenar3(palavra1, palavra2, palavra3, separador = " | ") {
+    if (
+        typeof palavra1 !== "string" ||
+        typeof palavra2 !== "string" ||
+        typeof palavra3 !== "string" ||
+        typeof separador !== "string"
+    ) {
+        return "Os parâmetros devem ser textos.";
+    }
+
+    return palavra1 + separador + palavra2 + separador + palavra3;
+}
+console.log(concatenar3("JavaScript", "HTML", "CSS"));
+console.log(concatenar3("JavaScript", "HTML", "CSS", " - "));
+
+
+
+-- 3
+function converterMinutosParaHoras(minutos) {
+    if (typeof minutos !== "number" || !Number.isFinite(minutos) || minutos < 0) {
+        return "Digite uma quantidade válida de minutos.";
+    }
+
+    let horas = minutos / 60;
+
+    return horas;
+}
+
+console.log(converterMinutosParaHoras(120));
+console.log(converterMinutosParaHoras(90));
+
+
+
+-- 4
+function retornarQuantidadeDeGasolina(quilometros, consumo) {
+    if (
+        typeof quilometros !== "number" ||
+        typeof consumo !== "number" ||
+        !Number.isFinite(quilometros) ||
+        !Number.isFinite(consumo) ||
+        quilometros < 0 ||
+        consumo <= 0
+    ) {
+        return "Digite valores válidos.";
+    }
+
+    let distanciaTotal = quilometros * 2;
+    let gasolina = (distanciaTotal / 100) * consumo;
+
+    return gasolina;
+}
+console.log(retornarQuantidadeDeGasolina(300, 10));
+
+
+
+-- 5.1
+function exibirProdutoComPreco(nomeProduto, preco) {
+    if (
+        typeof nomeProduto !== "string" ||
+        typeof preco !== "number" ||
+        !Number.isFinite(preco) ||
+        preco < 0
+    ) {
+        console.log("Dados inválidos.");
+        return;
+    }
+
+    console.log(
+        `${nomeProduto} ................................ R$ ${preco.toFixed(2).replace(".", ",")}`
+    );
+}
+exibirProdutoComPreco("Jaqueta Jeans", 220);
+exibirProdutoComPreco("Tênis", 350.50);
+
+
+
+
+-- 5.2
+function precoParcela(precoTotal, parcelas = 1) {
+    if (
+        typeof precoTotal !== "number" ||
+        !Number.isFinite(precoTotal) ||
+        precoTotal < 0
+    ) {
+        return "Preço inválido.";
+    }
+
+    if (
+        typeof parcelas !== "number" ||
+        !Number.isInteger(parcelas) ||
+        parcelas <= 0
+    ) {
+        return "Quantidade de parcelas inválida.";
+    }
+
+    if (parcelas > 12) {
+        return precoTotal;
+    }
+
+    return precoTotal / parcelas;
+}
+console.log(precoParcela(1200, 6)); 
+console.log(precoParcela(1200, 12)); 
+console.log(precoParcela(1200, 15)); 
+console.log(precoParcela(500)); 
+
+
+
+
+-- 5.3
+function aplicarDesconto(valorTotal, desconto) {
+    if (
+        typeof valorTotal !== "number" ||
+        typeof desconto !== "number" ||
+        !Number.isFinite(valorTotal) ||
+        !Number.isFinite(desconto) ||
+        valorTotal < 0 ||
+        desconto < 0
+    ) {
+        return "Valores inválidos.";
+    }
+
+    if (desconto > valorTotal) {
+        return 0;
+    }
+
+    return valorTotal - desconto;
+}
+console.log(aplicarDesconto(500, 50)); 
+console.log(aplicarDesconto(500, 100)); 
+console.log(aplicarDesconto(500, 600)); 
+
+
+-- 5.4
+function aplicarCupomDesconto(valorTotal, cupom) {
+    if (
+        typeof valorTotal !== "number" ||
+        !Number.isFinite(valorTotal) ||
+        valorTotal < 0
+    ) {
+        return "Valor total inválido.";
+    }
+
+    if (typeof cupom !== "string") {
+        return "O cupom deve ser uma string.";
+    }
+
+    if (cupom === "CUPOM50") {
+        return aplicarDesconto(valorTotal, 50);
+    }
+
+    if (cupom === "CUPOM100") {
+        return aplicarDesconto(valorTotal, 100);
+    }
+
+    if (cupom === "CUPOM200") {
+        return aplicarDesconto(valorTotal, 200);
+    }
+
+    return valorTotal;
+}
+
+console.log(aplicarCupomDesconto(500, "CUPOM50"));  
+console.log(aplicarCupomDesconto(500, "CUPOM100")); 
+console.log(aplicarCupomDesconto(500, "CUPOM200")); 
+console.log(aplicarCupomDesconto(500, "CUPOM10")); 
+

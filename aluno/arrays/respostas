@@ -1,0 +1,136 @@
+-- 1 --
+    
+ let fila = ["Ana", "Carlos", "Mariana"];
+ fila.push("João");
+ console.log("EXERCÍCIO 1");
+ console.log("Fila de atendimento:");
+ for (let i = 0; i < fila.length; i++) {
+     console.log(fila[i]);
+ }
+ let pessoaAtendida = fila.shift();
+ console.log("Pessoa atendida:", pessoaAtendida);
+ console.log("Fila após o atendimento:");
+ for (let i = 0; i < fila.length; i++) {
+     console.log(fila[i]);
+ }
+
+-- 2 -- 
+      
+function somenteNumeros(array) {
+    let numeros = [];
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] === "number") {
+            numeros.push(array[i]);
+        }
+    }
+    return numeros;
+}
+let valores = [10, "Olá", 20, true, 30, "JavaScript", 40];
+let resultadoNumeros = somenteNumeros(valores);
+console.log("EXERCÍCIO 2");
+console.log("Valores numéricos:", resultadoNumeros);
+
+-- 3 --
+    
+function adicionarPedido(pedidos, codigo) {
+    if (pedidos.length === 10) {
+        pedidos.shift();
+    }
+    pedidos.push(codigo);
+    return pedidos;
+}
+let pedidos = [
+    "0001",
+    "0002",
+    "0003",
+    "0004",
+    "0005"
+];
+let codigo = prompt("EXERCÍCIO 3\nDigite o código do pedido com 4 dígitos:");
+if (/^\d{4}$/.test(codigo)) {
+    pedidos = adicionarPedido(pedidos, codigo);
+    console.log("EXERCÍCIO 3");
+    console.log("Histórico de pedidos:");
+    console.log(pedidos);
+} else {
+    alert("Código inválido! Digite exatamente 4 números.");
+}
+
+-- 4 --
+    
+function gerarTextoCompras(itens) {
+    return itens.join(", ");
+}
+let compras = [
+    "Arroz",
+    "Feijão",
+    "Macarrão",
+    "Leite",
+    "Café"
+];
+let listaCompras = gerarTextoCompras(compras);
+console.log("EXERCÍCIO 4");
+console.log(listaCompras);
+
+-- 5 --
+   
+function gerarTextoCompras2(itens, formato) {
+    if (formato === "texto") {
+        return itens.join(", ");
+    }
+    if (formato === "lista") {
+        let resultado = "";
+        for (let i = 0; i < itens.length; i++) {
+            resultado += "• " + itens[i];
+            if (i < itens.length - 1) {
+                resultado += "\n";
+            }
+        }
+        return resultado;
+    }
+    return "Formato inválido.";
+}
+let compras2 = [
+    "Arroz",
+    "Feijão",
+    "Macarrão"
+];
+console.log("EXERCÍCIO 5");
+console.log(gerarTextoCompras2(compras2, "texto"));
+console.log(gerarTextoCompras2(compras2, "lista"));
+
+-- 6 --
+      
+
+  let corredores = [
+      "Ana",
+      "Beto",
+      "Caio",
+      "Duda",
+      "Eva",
+      "Fred"
+  ];
+
+  let podio = corredores.slice(0, 3);
+
+  console.log("EXERCÍCIO 6");
+  console.log("Pódio da corrida:");
+
+  for (let i = 0; i < podio.length; i++) {
+      console.log((i + 1) + "º lugar: " + podio[i]);
+  }
+
+-- 7 --
+
+let usuariosBanidos = [
+    "WiseScorpion",
+    "Plabbernom",
+    "xxx33Fibberflop"
+];
+function verificarBanido(usuarios, apelido) {
+    return usuarios.includes(apelido);
+}
+let apelido = prompt("EXERCÍCIO 7\nDigite o apelido do usuário:");
+let usuarioBanido = verificarBanido(usuariosBanidos, apelido);
+console.log("EXERCÍCIO 7");
+console.log("O usuário está banido?", usuarioBanido);

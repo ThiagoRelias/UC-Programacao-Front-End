@@ -1,0 +1,77 @@
+-- 1
+const produto1 = {
+    nome: "Leite",
+    preco: 6.50,
+    categoria: "Laticínios"
+};
+
+const produto2 = {
+    nome: "Pão",
+    preco: 9.90,
+    categoria: "Pães"
+};
+
+function produtoMaisCaro(produto1, produto2) {
+    if (produto1.preco > produto2.preco) {
+        console.log("Produto mais caro:", produto1.nome);
+        console.log("Categoria:", produto1.categoria);
+    } else {
+        console.log("Produto mais caro:", produto2.nome);
+        console.log("Categoria:", produto2.categoria);
+    }
+}
+produtoMaisCaro(produto1, produto2);
+
+
+-- 2
+const aluno = {
+    nome: "Carlos",
+    idade: 20,
+    curso: "Informática",
+    notas: [8, 7, 9, 6]
+};
+
+function calcularMedia(aluno) {
+    let soma = 0;
+
+    for (let i = 0; i < aluno.notas.length; i++) {
+        soma += aluno.notas[i];
+    }
+    aluno.media = soma / aluno.notas.length;
+}
+
+calcularMedia(aluno);
+
+console.log("Nome:", aluno.nome);
+console.log("Idade:", aluno.idade);
+console.log("Curso:", aluno.curso);
+console.log("Notas:", aluno.notas);
+console.log("Média:", aluno.media);
+
+
+-- 3 
+const carro = {
+    nome: "Civic",
+    cor: "Preto",
+    modelo: "2025",
+    opcionais: {
+        "ar condicionado": true,
+        "direção elétrica": true,
+        "multimídia": false
+    }
+};
+
+function exibirDetalhes(carro) {
+    console.log("Nome:", carro.nome);
+    console.log("Cor:", carro.cor);
+    console.log("Modelo:", carro.modelo);
+    console.log("Opcionais:", carro.opcionais);
+}
+
+function alterarOpcional(carro, nomeOpcional, valor) {
+    carro.opcionais[nomeOpcional] = valor;
+}
+
+exibirDetalhes(carro);
+alterarOpcional(carro, "multimídia", true);
+exibirDetalhes(carro);
