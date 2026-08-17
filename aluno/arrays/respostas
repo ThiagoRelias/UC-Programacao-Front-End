@@ -1,4 +1,4 @@
--- 1 --
+-- 1 
     
  let fila = ["Ana", "Carlos", "Mariana"];
  fila.push("João");
@@ -14,7 +14,7 @@
      console.log(fila[i]);
  }
 
--- 2 -- 
+-- 2 
       
 function somenteNumeros(array) {
     let numeros = [];
@@ -30,7 +30,7 @@ let resultadoNumeros = somenteNumeros(valores);
 console.log("EXERCÍCIO 2");
 console.log("Valores numéricos:", resultadoNumeros);
 
--- 3 --
+-- 3 
     
 function adicionarPedido(pedidos, codigo) {
     if (pedidos.length === 10) {
@@ -56,7 +56,7 @@ if (/^\d{4}$/.test(codigo)) {
     alert("Código inválido! Digite exatamente 4 números.");
 }
 
--- 4 --
+-- 4 
     
 function gerarTextoCompras(itens) {
     return itens.join(", ");
@@ -72,7 +72,7 @@ let listaCompras = gerarTextoCompras(compras);
 console.log("EXERCÍCIO 4");
 console.log(listaCompras);
 
--- 5 --
+-- 5 
    
 function gerarTextoCompras2(itens, formato) {
     if (formato === "texto") {
@@ -99,8 +99,8 @@ console.log("EXERCÍCIO 5");
 console.log(gerarTextoCompras2(compras2, "texto"));
 console.log(gerarTextoCompras2(compras2, "lista"));
 
--- 6 --
-      
+-- 6 
+    
 
   let corredores = [
       "Ana",
@@ -120,7 +120,8 @@ console.log(gerarTextoCompras2(compras2, "lista"));
       console.log((i + 1) + "º lugar: " + podio[i]);
   }
 
--- 7 --
+
+-- 7 
 
 let usuariosBanidos = [
     "WiseScorpion",
